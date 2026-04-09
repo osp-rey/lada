@@ -10,7 +10,7 @@
     color: white;
     padding: 50px 0px 165px 0px;
     box-sizing: border-box;
-    min-height: calc(100vh - 150px);
+    min-height: calc(100svh - 150px);
     z-index: 1;
     width: 90vw !important;
     max-width: 100%;
@@ -22,15 +22,15 @@
       padding-bottom: 145px;
     }
     @include laptop-min {
-      min-height: calc(100vh - 85px);
+      min-height: calc(100svh - 85px);
     }
     @include tablet {
       padding: 50px 0px 60px 0px;
-      min-height: calc(100vh - 65px);
+      min-height: calc(100svh - 65px);
     }
     @include tablet-min {
       padding-top: 40px;
-      min-height: calc(100vh - 60px);
+      min-height: calc(100svh - 60px);
     }
 
     &::before {

@@ -3,7 +3,6 @@ import burger from "./files/burger.js";
 import buttonsNote from "./files/buttonsNote.js";
 import headerScroll from "./files/headerScroll.js";
 import inputmask from "./files/inputmask.js";
-import introHeight from "./files/introHeight.js";
 import map from "./files/map.js";
 import productChange from "./files/productChange.js";
 import selectHandler from "./files/select.js";
@@ -20,7 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
   inputmask();
   map();
   headerScroll();
-  introHeight();
 
   Fancybox.bind("[data-fancybox]", { closeButton: false });
   // Fancybox.show([{ src: "#modal-feedback", type: "inline" }], {
