@@ -5,6 +5,11 @@
   padding: 25px 0px;
   background-color: white;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  @include laptop-min {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
   @include tablet {
     padding: 15px 0px;
   }
@@ -137,9 +142,19 @@
   position: sticky;
   top: 0;
   background-color: white;
+  transition: transform .3s ease;
   z-index: 100;
+
+  &._scroll {
+    transform: translateY(-100%);
+  }
+
   @include laptop-min {
-    display: none;
+    position: absolute;
+    left: -9999px;
+    visibility: hidden;
+    opacity: 0;
+    z-index: -999;
   }
   &__list {
     @include flex-between;

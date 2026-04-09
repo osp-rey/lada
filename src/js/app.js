@@ -1,6 +1,7 @@
 import "../scss/style.scss";
 import burger from "./files/burger.js";
 import buttonsNote from "./files/buttonsNote.js";
+import headerScroll from "./files/headerScroll.js";
 import inputmask from "./files/inputmask.js";
 import map from "./files/map.js";
 import productChange from "./files/productChange.js";
@@ -17,6 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
   buttonsNote();
   inputmask();
   map();
+  headerScroll();
 
   Fancybox.bind("[data-fancybox]", { closeButton: false });
   // Fancybox.show([{ src: "#modal-feedback", type: "inline" }], {
