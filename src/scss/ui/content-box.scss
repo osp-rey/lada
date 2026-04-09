@@ -1,0 +1,18 @@
+@use '../base/templates' as *;
+@use '../base/media' as *;
+
+.content-box {
+  font-size: 18px;
+  line-height: 144%;
+  @include laptop-middle {
+    font-size: 16px;
+    line-height: 130%;
+  }
+
+  & > * {
+    margin: 0;
+    &:not(:last-child) {
+      margin-bottom: 18px;
+    }
+  }
+}

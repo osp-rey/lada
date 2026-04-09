@@ -1,0 +1,65 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.btn-s {
+  --background: var(--primary);
+  --border: var(--primary);
+  --color: white;
+  --background-h: var(--dark);
+  --border-h: var(--dark);
+  --color-h: white;
+
+  @include flex-center;
+  width: fit-content;
+  cursor: pointer;
+  padding: 19px 29px;
+  border: 1px solid var(--border);
+  background-color: var(--background);
+  outline: none;
+
+  color: var(--color);
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-align: center;
+
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease,
+    background-color 0.3s ease;
+
+  @include hover {
+    background-color: var(--background-h);
+    border-color: var(--border-h);
+    color: var(--color-h);
+  }
+  @include tablet {
+    padding: 16px 24px;
+  }
+
+  &._outline-white {
+    --background: transparent;
+    --border: white;
+    --color: white;
+    --background-h: transparent;
+    --border-h: var(--primary);
+    --color-h: var(--primary);
+  }
+  &._outline-primary {
+    --background: transparent;
+    --border: var(--primary);
+    --color: var(--primary);
+    --background-h: var(--primary);
+    --border-h: var(--primary);
+    --color-h: white;
+  }
+  &._dark {
+    --background: var(--dark);
+    --border: var(--dark);
+    --color: white;
+    --background-h: var(--primary);
+    --border-h: var(--primary);
+    --color-h: white;
+  }
+}

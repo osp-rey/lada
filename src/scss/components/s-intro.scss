@@ -1,0 +1,145 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.s-intro {
+  position: relative;
+  z-index: 1;
+  &__slide {
+    display: flex !important;
+    align-items: flex-end;
+    color: white;
+    padding: 50px 0px 165px 0px;
+    box-sizing: border-box;
+    min-height: calc(100vh - 150px);
+    z-index: 1;
+    width: 90vw !important;
+    max-width: 100%;
+
+    @include desktop {
+      width: 100% !important;
+    }
+    @include laptop {
+      padding-bottom: 145px;
+    }
+    @include laptop-min {
+      min-height: calc(100vh - 85px);
+    }
+    @include tablet {
+      padding: 50px 0px 60px 0px;
+      min-height: calc(100vh - 65px);
+    }
+    @include tablet-min {
+      padding-top: 40px;
+      min-height: calc(100vh - 60px);
+    }
+
+    &::before {
+      position: absolute;
+      content: "";
+      background-color: rgba(0, 0, 0, 0.35);
+      inset: 0;
+      z-index: -1;
+    }
+    &.swiper-slide-next {
+      .s-intro__slide-bg {
+        width: 10vw;
+        @include desktop {
+          width: 100%;
+        }
+      }
+    }
+  }
+  &__slide-bg {
+    position: absolute;
+    display: block;
+    max-width: 100%;
+    width: 100vw;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    object-position: center;
+    z-index: -2;
+
+    transition: width 1s ease;
+
+    @include laptop-min {
+      width: 100% !important;
+      transition: none;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+  &__slide-body {
+    max-width: 695px;
+  }
+  &__slide-logo {
+    display: block;
+    margin-bottom: 40px;
+    @include laptop-min {
+      margin-bottom: 25px;
+    }
+  }
+  &__title {
+  }
+  &__content {
+    font-size: 18px;
+    line-height: 144%;
+    margin: 40px 0px 0px 0px;
+    @include laptop-min {
+      margin-top: 30px;
+      font-size: 16px;
+    }
+  }
+  &__slide-btn {
+    margin-top: 50px;
+    width: 365px;
+    max-width: 100%;
+    @include laptop-min {
+      margin-top: 30px;
+    }
+    @include tablet {
+      margin-top: 25px;
+    }
+    @include tablet-min {
+      width: 100%;
+    }
+  }
+
+  &__slider-nav {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    max-width: 100%;
+    padding-bottom: 30px;
+    z-index: 10;
+    @include laptop-min {
+      padding-bottom: 20px;
+    }
+
+    .slider-arrows {
+      margin-left: auto;
+      margin-right: 180px;
+      @include desktop {
+        margin-right: 0;
+      }
+    }
+    .slider-arrow {
+      --border: rgba(255, 255, 255, 0.2);
+      --color: white;
+      --color-h: white;
+    }
+    .slider-pagination {
+      @include tablet {
+        margin-top: 0px;
+      }
+    }
+  }
+}

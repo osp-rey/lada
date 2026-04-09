@@ -1,0 +1,145 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.slider-arrows {
+  display: flex;
+  width: fit-content;
+  flex-shrink: 0;
+  gap: 15px;
+
+  @include tablet {
+    display: none;
+  }
+}
+
+.slider-arrow {
+  --background: transparent;
+  --background-h: transparent;
+  --border: var(--gray);
+  --border-h: var(--primary);
+  --color: var(--dark);
+  --color-h: var(--dark);
+
+  @include flex-center;
+  cursor: pointer;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background-color: var(--background);
+  color: var(--color);
+
+  transition:
+    color 0.3s ease,
+    background-color 0.3s ease,
+    border-color 0.3s ease;
+
+  @include hover {
+    border-color: var(--border-h);
+    background-color: var(--background-h);
+    color: var(--color-h);
+  }
+
+  &.swiper-button-disabled {
+    pointer-events: none;
+    opacity: 0.7;
+  }
+
+  &._prev {
+    svg {
+      transform: translateX(-2px);
+    }
+  }
+  &._next {
+    svg {
+      transform: translateX(2px);
+    }
+  }
+
+  svg {
+    width: 12px;
+    height: 24px;
+  }
+
+  &._white {
+    --background: transparent;
+    --background-h: transparent;
+    --border: white;
+    --border-h: var(--primary);
+    --color: white;
+    --color-h: white;
+  }
+  &._dark {
+    --background: rgba(38, 38, 38, 0.5);
+    --background-h: rgba(38, 38, 38, 0.5);
+    --border: rgba(255, 255, 255, 0.2);
+    --border-h: var(--primary);
+    --color: white;
+    --color-h: white;
+  }
+}
+
+.slider-pagination {
+  @include flex-center;
+  gap: 10px;
+  margin-top: 50px;
+  @include laptop {
+    margin-top: 30px;
+  }
+
+  .swiper-pagination-bullet {
+    --border: white;
+    --background: rgba(255, 255, 255, 0.2);
+    --border-h: white;
+    --background-h: white;
+
+    cursor: pointer;
+    margin: 0 !important;
+    width: 10px;
+    height: 10px;
+    opacity: 1;
+    background-color: var(--background);
+    border: 1px solid var(--border);
+
+    transition:
+      background-color 0.3s ease,
+      border-color 0.3s ease;
+
+    &.swiper-pagination-bullet-active {
+      background-color: var(--background-h);
+      border-color: var(--border-h);
+    }
+
+    @include hover {
+      background-color: var(--background-h);
+      border-color: var(--border-h);
+    }
+  }
+}
+
+.slider-scrollbar {
+  position: relative;
+  width: 100%;
+  margin-top: 75px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.5);
+  @include laptop {
+    margin-top: 50px;
+  }
+  @include laptop-min {
+    margin-top: 40px;
+  }
+  @include tablet {
+    margin-top: 30px;
+  }
+
+  .swiper-scrollbar-drag {
+    &::before {
+      position: absolute;
+      content: "";
+      inset: -1px 0px;
+      background-color: var(--primary);
+      z-index: 1;
+    }
+  }
+}

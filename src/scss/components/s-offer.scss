@@ -1,0 +1,75 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.s-offer {
+  overflow: hidden;
+  &__wrapper {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: 30px;
+    @include laptop-middle {
+      flex-wrap: wrap;
+    }
+  }
+  &__info {
+    position: relative;
+    flex: 0 1 480px;
+    z-index: 10;
+    @include laptop-middle {
+      flex: auto;
+      width: 100%;
+    }
+  }
+  &__title {
+    margin-bottom: 30px;
+  }
+  &__content {
+  }
+  &__btn {
+    width: 365px;
+    max-width: 100%;
+    margin-top: 50px;
+    @include laptop-middle {
+      margin-top: 30px;
+    }
+    @include tablet-min {
+      width: 100%;
+    }
+  }
+  &__slider-wrapper {
+    width: fit-content;
+    @include laptop-middle {
+      width: 100%;
+    }
+
+    .slider-scrollbar {
+      background: rgba(0, 0, 0, 0.2);
+    }
+  }
+  &__slider {
+    width: 760px;
+    overflow: visible !important;
+    @include laptop {
+      width: 660px;
+    }
+    @include laptop-middle {
+      width: 100%;
+    }
+
+    .swiper-slide {
+      box-sizing: border-box;
+      max-width: 100%;
+
+      transition: opacity 0.3s ease;
+
+      @include laptop-middle {
+        width: 365px !important;
+      }
+
+      &._hide {
+        opacity: 0 !important;
+      }
+    }
+  }
+}

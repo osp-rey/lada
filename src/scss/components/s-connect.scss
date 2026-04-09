@@ -1,0 +1,72 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.s-connect {
+  position: relative;
+  z-index: 1;
+  color: white;
+  &::before {
+    position: absolute;
+    content: "";
+    inset: 0;
+    background: rgba(38, 38, 38, 0.75);
+    z-index: -1;
+  }
+  &__info {
+    max-width: 690px;
+  }
+  &__title {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 120%;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    margin: 0px 0px 30px 0px;
+    @include laptop-min {
+      font-size: 32px;
+    }
+    @include tablet {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+    @include tablet-min {
+      font-size: 26px;
+    }
+  }
+  &__content {
+    font-size: 18px;
+    line-height: 144%;
+    max-width: 485px;
+    margin: 0;
+  }
+  &__form {
+    margin-top: 60px;
+    max-width: 540px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    @include laptop {
+      margin-top: 40px;
+    }
+    @include laptop-min {
+      margin-top: 30px;
+    }
+    @include tablet-min {
+      gap: 15px;
+    }
+
+    .input-control,
+    .checks,
+    .btn-s,
+    .check-wrapper {
+      width: 100%;
+      &:not(._half) {
+        grid-column: 2 span;
+      }
+
+      @include tablet-min {
+        grid-column: 2 span !important;
+      }
+    }
+  }
+}

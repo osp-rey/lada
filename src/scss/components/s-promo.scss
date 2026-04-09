@@ -1,0 +1,22 @@
+.s-promo {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  color: white;
+
+  &::before {
+    position: absolute;
+    content: "";
+    inset: 0;
+    background: rgba(38, 38, 38, 0.75);
+    z-index: -1;
+  }
+  &__slider {
+    overflow: visible !important;
+    .swiper-slide {
+      width: 365px !important;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+  }
+}
