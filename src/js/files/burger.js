@@ -28,5 +28,13 @@ export default function burger() {
       burger.classList.remove("_open");
       burgerOverlay.classList.remove("_active");
     }
+    function updateHeightBurger() {
+      burger.style.height = `${window.visualViewport.height}px`;
+    }
+
+    window.visualViewport.addEventListener("resize", updateHeightBurger);
+    window.visualViewport.addEventListener("scroll", updateHeightBurger);
+
+    updateHeightBurger();
   }
 }
