@@ -22,15 +22,15 @@
       padding-bottom: 145px;
     }
     @include laptop-min {
-      min-height: calc(100svh - 85px);
+      min-height: calc(100svh - 115px);
     }
     @include tablet {
       padding: 50px 0px 60px 0px;
-      min-height: calc(100svh - 65px);
+      min-height: calc(100svh - 95px);
     }
     @include tablet-min {
       padding-top: 40px;
-      min-height: calc(100svh - 60px);
+      min-height: calc(100svh - 90px);
     }
 
     &::before {
